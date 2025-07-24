@@ -1,5 +1,5 @@
 import express from "express";
-import Meditation from "../models/Meditation.js";
+import Meditation from "../../src/backend/models/Meditation.js";
 const router = express.Router();
 
 router.get("/", async (req, res) => {

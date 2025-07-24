@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import Mood from "../models/Mood.js";
+import Journal from "../../src/backend/models/Journal.js";
 const router = express.Router();
 function auth(req, res, next) {
   const token = req.header("Authorization");
@@ -12,12 +12,12 @@ function auth(req, res, next) {
   }
 }
 router.post("/", auth, async (req, res) => {
-  const { mood, note } = req.body;
-  const newEntry = await Mood.create({ userId: req.userId, mood, note });
-  res.json(newEntry);
+  const { entry } = req.body;
+  const j = await Journal.create({ userId: req.userId, entry });
+  res.json(j);
 });
 router.get("/", auth, async (req, res) => {
-  const entries = await Mood.find({ userId: req.userId });
+  const entries = await Journal.find({ userId: req.userId });
   res.json(entries);
 });
 export default router;
