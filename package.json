@@ -2,6 +2,8 @@
   "name": "chillsaathi-client",
   "version": "0.1.0",
   "private": true,
+  
+    "main": "server.js",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@testing-library/dom": "^10.4.0",
@@ -59,4 +61,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11"
   }
+  
+
 }
