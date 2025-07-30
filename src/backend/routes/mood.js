@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import Mood from "../../src/backend/models/Mood.js";
+import Mood from "../models/mood.js";
 const router = express.Router();
 function auth(req, res, next) {
   const token = req.header("Authorization");
