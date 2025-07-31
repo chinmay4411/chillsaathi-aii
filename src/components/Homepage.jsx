@@ -18,7 +18,7 @@ const Homepage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/profile", {
+      .get("https://chillsaathi-backend.onrender.com/api/profile", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => setUserData(res.data))
